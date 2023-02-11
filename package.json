@@ -1,0 +1,8 @@
+{
+  "name": "hackbeanpot-food-desert",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "neo4j-driver": "^5.5.0"
+  }
+}
