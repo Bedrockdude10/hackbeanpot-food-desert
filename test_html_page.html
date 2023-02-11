@@ -1,11 +1,67 @@
-<!DOCTYPE html>
 <html>
-<body>
+<head>
+  <style>
+    #map {height: 70%;width:60%}
+  </style>
 
-<h1>The script src attribute</h1>
+  <script src="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.js"></script>
+  <script src="https://unpkg.com/neo4j-driver"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.css" />
+</head>
 
-<script src="driver.js">
-</script>
+  <body>
+    <div id="map"></div>
 
-</body>
+    <script>
+        var baseLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+        { attribution: 'OpenStreetMap', minZoom: 2, maxZoom: 18});
+
+        var map = new L.Map('map', {center: new L.LatLng(37.5634399, -122.3244533), zoom: 17, layers: [baseLayer]});
+/*
+        var marker1 = new L.Marker(new L.LatLng(37.5634399, -122.3222646)).addTo(map);
+        marker1.bindPopup('Neo4j HQ');
+
+        var marker2 = new L.Marker(new L.LatLng(37.5669493, -122.3237035)).addTo(map);
+        marker2.bindPopup('Philz Coffee');
+
+        var marker3 = new L.Marker(new L.LatLng(37.5622308, -122.3268279)).addTo(map);
+        marker3.bindPopup('San Mateo Public Library');
+
+        var polygon = L.polygon([
+                           new L.LatLng(37.5634399, -122.3222646),
+                           new L.LatLng(37.5622308, -122.3268279),
+                           new L.LatLng(37.5669493, -122.3237035)
+                        ]).addTo(map);
+    */
+        var driver = neo4j.driver("bolt+s://4880961c56ecb6059750f38a0db86f46.neo4jsandbox.com:7687", 
+                                            neo4j.auth.basic("neo4j", "carrier-pea-swells"));
+                                            
+var session = driver.session();
+session
+  .run(`MATCH (s: Store) return s`)
+  .subscribe({
+    onNext: function (record) {
+      console.log(record.get('s').properties.name);
+
+      /*var marker = new L.Marker(new L.LatLng(record.get('latitude'), record.get('longitude')));
+      marker.bindPopup('<b>Address:</b> ' + record.get('address') + '<br>' + '<b>Officers: </b>' + record.get('officers').toString() + '<br><b>Entities:</b> ' + record.get('entities').toString() + '<br><b>Offshore Countries: </b> ' + record.get('jurisdictions').toString());
+      markerLayers.addLayer(marker);
+      heatmap.pushData(record.get('latitude'), record.get('longitude'), record.get('strength')*0.01);
+    },
+    onCompleted: function () {
+      var overlayMaps = {'Markers': markerLayers, 'Heatmap': heatmap};
+      var controls = L.control.layers(null, overlayMaps, {collapsed: false, autoZIndex: true});
+      map = new L.Map('map', {center: new L.LatLng(51.505, -0.09), zoom: 3, layers: [baseLayer]});
+      map.addLayer(markerLayers);
+      map.addLayer(heatmap);
+      controls.addTo(map);
+      session.close();*/
+    },
+    onError: function (error) {
+      console.log(error);
+    }
+  });
+    </script>
+
+  </body>
 </html>
