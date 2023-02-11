@@ -5,7 +5,7 @@ class HelloWorldExample:
 
     def __init__(self, uri, user, password):
         self.driver = GraphDatabase.driver(uri, auth=(user, password))
-# this is a change
+
     def close(self):
         self.driver.close()
 
