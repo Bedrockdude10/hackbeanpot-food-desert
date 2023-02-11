@@ -2,15 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <!--<meta name=description content="This site was generated with Anima. www.animaapp.com"/>-->
-    <!-- <link rel="shortcut icon" type=image/png href="https://animaproject.s3.amazonaws.com/home/favicon.png" /> -->
-    <meta name="viewport" content="width=1440, maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
     <meta name="og:type" content="website" />
     <meta name="twitter:card" content="photo" />
     <link rel="stylesheet" type="text/css" href="css/data-mapping.css" />
     <style></style>
     <link rel="stylesheet" type="text/css" href="css/styleguide.css" />
     <link rel="stylesheet" type="text/css" href="css/globals.css" />
+    <script src="jquery.js"></script>
+    <script>
+      $(function(){
+        $("#data-mapping").load("data-mapping/index.html");
+      });
+    </script>
   </head>
   <body style="margin: 0; background: #255849">
     <div class="container-center-horizontal">
@@ -24,8 +28,8 @@
           >
           <div class="navbar">
             <a href="/"><div class="navbar-link jost-medium-plantation-24px">Home</div></a>
-            <a href="data-mapping"><div class="navbar-link jost-medium-plantation-24px">Data Mapping</div> </a
-            ><a href="about"><div class="navbar-link jost-medium-plantation-24px">About</div> </a
+            <div id="data-mapping" class="navbar-link jost-medium-plantation-24px">Data Mapping</div>
+            <a href="about"><div class="navbar-link jost-medium-plantation-24px">About</div> </a
             ><a href="learn-more"><div class="navbar-link jost-medium-plantation-24px">Learn More</div> </a>
           </div>
           <div class="frame-3">
