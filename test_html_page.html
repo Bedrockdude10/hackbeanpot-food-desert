@@ -16,7 +16,7 @@
         var baseLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
         { attribution: 'OpenStreetMap', minZoom: 2, maxZoom: 18});
 
-        var map = new L.Map('map', {center: new L.LatLng(37.5634399, -122.3244533), zoom: 17, layers: [baseLayer]});
+        var map = new L.Map('map', {center: new L.LatLng(42.341145, -71.057083), zoom: 13, layers: [baseLayer]});
 /*
         var marker1 = new L.Marker(new L.LatLng(37.5634399, -122.3222646)).addTo(map);
         marker1.bindPopup('Neo4j HQ');
@@ -41,13 +41,18 @@ session
   .run(`MATCH (s: Store) return s`)
   .subscribe({
     onNext: function (record) {
-      console.log(record.get('s').properties.name);
+      console.log(record.get('s'));
 
-      /*var marker = new L.Marker(new L.LatLng(record.get('latitude'), record.get('longitude')));
+      /*
+
+      var marker = new L.Marker(new L.LatLng(record.get('latitude'), record.get('longitude')));
       marker.bindPopup('<b>Address:</b> ' + record.get('address') + '<br>' + '<b>Officers: </b>' + record.get('officers').toString() + '<br><b>Entities:</b> ' + record.get('entities').toString() + '<br><b>Offshore Countries: </b> ' + record.get('jurisdictions').toString());
       markerLayers.addLayer(marker);
       heatmap.pushData(record.get('latitude'), record.get('longitude'), record.get('strength')*0.01);
-    },
+
+      */
+
+    },/*
     onCompleted: function () {
       var overlayMaps = {'Markers': markerLayers, 'Heatmap': heatmap};
       var controls = L.control.layers(null, overlayMaps, {collapsed: false, autoZIndex: true});
@@ -55,11 +60,11 @@ session
       map.addLayer(markerLayers);
       map.addLayer(heatmap);
       controls.addTo(map);
-      session.close();*/
+      session.close();
     },
     onError: function (error) {
       console.log(error);
-    }
+    }*/
   });
     </script>
 
