@@ -1,0 +1,50 @@
+/* Variables */
+
+:root {
+    --black: rgba(0, 0, 0, 1);
+    --plantation: rgba(37, 88, 73, 1);
+    --spring-wood: rgba(250, 247, 239, 1);
+
+    --font-size-xs: 20px;
+    --font-size-s: 24px;
+    --font-size-m: 30px;
+    --font-size-l: 34px;
+    --font-size-xl: 90px;
+
+    --font-family-jost: "Jost";
+    --font-family-playfair_display: "Playfair Display";
+}
+
+/* Classes */
+
+.jost-medium-spring-wood-30px {
+    color: var(--spring-wood);
+    font-family: var(--font-family-jost);
+    font-size: var(--font-size-m);
+    font-weight: 500;
+    font-style: normal;
+}
+
+.jost-normal-spring-wood-30px {
+    color: var(--spring-wood);
+    font-family: var(--font-family-jost);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.jost-semi-bold-spring-wood-30px {
+    color: var(--spring-wood);
+    font-family: var(--font-family-jost);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.jost-medium-plantation-24px {
+    color: var(--plantation);
+    font-family: var(--font-family-jost);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    font-style: normal;
+}
