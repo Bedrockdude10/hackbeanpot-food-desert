@@ -4,6 +4,7 @@
     --black: rgba(0, 0, 0, 1);
     --plantation: rgba(37, 88, 73, 1);
     --spring-wood: rgba(250, 247, 239, 1);
+    --white: rgba(255,255,255,1);
 
     --font-size-xs: 20px;
     --font-size-s: 24px;
@@ -17,24 +18,56 @@
 
 /* Classes */
 
-.jost-medium-spring-wood-30px {
-    color: var(--spring-wood);
+.jost-medium-white-24px {
+    color: var(--white);
+    font-family: var(--font-family-jost);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    font-style: normal;
+}
+
+.jost-normal-white-24px {
+    color: var(--white);
+    font-family: var(--font-family-jost);
+    font-size: var(--font-size-s);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.jost-medium-plantation-30px {
+    color: var(--plantation);
     font-family: var(--font-family-jost);
     font-size: var(--font-size-m);
     font-weight: 500;
     font-style: normal;
 }
 
-.jost-normal-spring-wood-30px {
-    color: var(--spring-wood);
+.jost-normal-plantation-30px {
+    color: var(--plantation);
     font-family: var(--font-family-jost);
     font-size: var(--font-size-m);
     font-weight: 400;
     font-style: normal;
 }
 
-.jost-semi-bold-spring-wood-30px {
-    color: var(--spring-wood);
+.jost-bold-plantation-90px {
+    color: var(--plantation);
+    font-family: var(--font-family-jost);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.playfairdisplay-semi-bold-plantation-24px {
+    color: var(--plantation);
+    font-family: var(--font-family-playfair_display);
+    font-size: var(--font-size-s);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.jost-semi-bold-plantation-30px {
+    color: var(--plantation);
     font-family: var(--font-family-jost);
     font-size: var(--font-size-m);
     font-weight: 600;

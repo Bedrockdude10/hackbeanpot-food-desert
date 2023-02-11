@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:600|Jost:400,700,500,600");
+
+.desktop-6 {
+    align-items: center;
+    background-color: var(--spring-wood);
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    height: 1124px;
+}
