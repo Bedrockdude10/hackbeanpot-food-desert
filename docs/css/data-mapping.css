@@ -367,49 +367,5 @@
   height: 1200px;
   width: 1600px;
 }
-@media screen and (max-width: 1599px) {
-  .screen.about { 
-    display: none;
-   }
-  .screen.data-mapping { 
-    display: none;
-   }
-  .screen.learn-more { 
-    display: none;
-   }
-}
-@media screen and (min-width: 1600px) and (max-width: 1599px) {
-  .screen.about { 
-    display: none;
-   }
-  .screen.data-mapping { 
-    display: none;
-   }
-  .screen.learn-more { 
-    display: none;
-   }
-  .screen.full-project { 
-    display: none;
-   }
-}
-@media screen and (min-width: 1600px) and (max-width: 1599px) {
-  .screen.about { 
-    display: none;
-   }
-  .screen.data-mapping { 
-    display: none;
-   }
-  .screen.learn-more { 
-    display: none;
-   }
-  .screen.full-project { 
-    display: none;
-   }
-}
-@media screen and (min-width: 1600px) {
-  .screen.full-project { 
-    display: none;
-   }
-}
 
 #map { height: 180px; }
