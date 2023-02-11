@@ -38,19 +38,33 @@
                                             
 var session = driver.session();
 session
-  .run(`MATCH (s: Store) return s`)
+  .run(`MATCH (s:Store) return s`)
   .subscribe({
     onNext: function (record) {
       console.log(record.get('s'));
 
-      /*
+      var xVal = record.get('s').properties.coord.x;
+      var yVal = record.get('s').properties.coord.y;
+      var name = record.get('s').properties.name
+      var neighborhood = record.get('s').properties.neighborhood
+      var address = record.get('s').properties.address
 
-      var marker = new L.Marker(new L.LatLng(record.get('latitude'), record.get('longitude')));
-      marker.bindPopup('<b>Address:</b> ' + record.get('address') + '<br>' + '<b>Officers: </b>' + record.get('officers').toString() + '<br><b>Entities:</b> ' + record.get('entities').toString() + '<br><b>Offshore Countries: </b> ' + record.get('jurisdictions').toString());
-      markerLayers.addLayer(marker);
-      heatmap.pushData(record.get('latitude'), record.get('longitude'), record.get('strength')*0.01);
+      // these are swapped for whatever reason
+      var marker = new L.marker([yVal, xVal]);
+      marker.addTo(map);
+      marker.bindPopup(name + '\n' + neighborhood + '\n' + address);
+      // marker.bindPopup(neighborhood);
+      // marker.bindPopup(address);
 
-      */
+      // console.log(xVal);
+      // console.log(yVal);
+      // console.log(marker);
+
+      //marker.bindPopup('<b>Address:</b> ' + record.get('address') + '<br>' + '<b>Officers: </b>' + record.get('officers').toString() + '<br><b>Entities:</b> ' + record.get('entities').toString() + '<br><b>Offshore Countries: </b> ' + record.get('jurisdictions').toString());
+      //markerLayers.addLayer(marker);
+      //heatmap.pushData(record.get('latitude'), record.get('longitude'), record.get('strength')*0.01);
+
+
 
     },/*
     onCompleted: function () {
