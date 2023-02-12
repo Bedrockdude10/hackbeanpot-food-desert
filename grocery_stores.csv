@@ -1,5 +1,24 @@
 Neighborhood,Store,Address,Latitude,Longitude
 Allston,Shaw’s,"370 Western Ave, Allston, MA 02134",42.3610091,-71.1375195
+<<<<<<< HEAD
+Allston,Super 88,"1 Brighton Ave, Boston, MA 02134",42.3524043,-71.1253923
+Allston,Shaw’s,1065 Commonwealth Ave.,42.3526094,-71.1234984
+Allston,Super Stop & Shop,"60 Everett St, Boston, MA 02134",42.3565798,-71.1398385
+Back Bay,Shaw’s,53 Huntington Avenue,42.3478421,-71.0793972
+Back Bay,Trader Joe’s,899 Boylston Street,42.3484566,-71.0840861
+Brighton,Whole Foods Market,"15 Washington St, Brighton, MA 02135",42.3427707,-71.1403026
+Charlestown,Whole Foods,"27 Austin St, Charlestown, MA 02129",42.3756124,-71.0663979
+Dorchester,America’s Food Basket,500 Geneva Avenue,42.3037671,-71.0718624
+Dorchester,America’s Food Basket,"576 Washington St, Brookline, MA 02446",42.3382939,-71.129321
+Dorchester,Shaw’s,45 Morrissey Boulevard,42.3184171,-71.0506125
+Dorchester,Super Stop & Shop,545 Freeport Street,42.2926289,-71.048848
+Dorchester,Kam Man Food,101 All State Rd./South Bay Mall,42.3267576,-71.0630645
+Dorchester,Super Stop & Shop,1100 Mass. Ave./South Bay Mall,42.326498,-71.0651599
+East Boston,Shaw’s,246 Border Street,42.3765905,-71.0403657
+Fenway,Whole Foods Market,15 Westland Avenue,42.3435358,-71.0863043
+Fenway,Shaw’s,33 Kilmarnock Street,42.3435518,-71.1004557
+Hyde Park,America’s Food Basket,942 Hyde Park Avenue,42.267672,-71.120811
+=======
 Allston,Super88,"1 Brighton Ave, Boston, MA 02134",42.3524043,-71.1253923
 Allston,Shaw’s,1065CommonwealthAve.,42.3526094,-71.1234984
 Allston,SuperStop&Shop,"60 Everett St, Boston, MA 02134",42.3565798,-71.1398385
@@ -17,6 +36,7 @@ East Boston,Shaw’s,246BorderStreet,42.3765905,-71.0403657
 Fenway,WholeFoodsMarket,15WestlandAvenue,42.3435358,-71.0863043
 Fenway,Shaw’s,33KilmarnockStreet,42.3435518,-71.1004557
 Hyde Park,America’sFoodBasket,942HydeParkAvenue,42.267672,-71.120811
+>>>>>>> 4ab02fdf4617e057f9fc6fef7e3239e590e3e152
 Hyde Park,Shaw’s,"1377 Hyde Park Ave, Hyde Park, MA 02136",42.2518761,-71.1260055
 Hyde Park,Stop&Shop,1025TrumanHighway,42.2423342,-71.1272125
 Hyde Park,PriceRite,"870 River St, Hyde Park, MA 02136",42.2619881,-71.1076244
