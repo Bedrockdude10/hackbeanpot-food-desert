@@ -52,7 +52,7 @@ session
       // these are swapped for whatever reason
       var marker = new L.marker([yVal, xVal]);
       marker.addTo(map);
-      marker.bindPopup(name + '\n' + neighborhood + '\n' + address);
+      marker.bindPopup('<p>' + name + '<br />' + neighborhood + '<br />' + address + '</p>');
       // marker.bindPopup(neighborhood);
       // marker.bindPopup(address);
 
