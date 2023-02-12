@@ -1,4 +1,4 @@
-/* screen - about */
+/* 
 
 .about {
   align-items: flex-start;
@@ -86,7 +86,7 @@
   font-weight: 700;
   line-height: 47.6px;
 }
-/* screen - data-mapping */
+
 
 .data-mapping {
   background-color: var(--plantation);
@@ -139,7 +139,7 @@
   font-size: var(--font-size-s);
   font-weight: 500;
 }
-/* screen - full-project */
+
 
 .full-project {
   align-items: center;
@@ -359,7 +359,7 @@
   object-fit: cover;
   position: relative;
 }
-/* screen - learn-more */
+
 
 .learn-more {
   background-color: var(--plantation);
@@ -368,4 +368,4 @@
   width: 1600px;
 }
 
-#map { height: 180px; }
+#map { height: 180px; } */
