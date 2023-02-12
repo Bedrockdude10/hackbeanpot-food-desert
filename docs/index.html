@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./scss/custom.css">
+    
     <title>Feed the Desert</title>
   </head>
   <body>
@@ -12,18 +15,35 @@
     <div class="container">
       <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-          <span class="fs-4">Simple header</span>
+          <img src="img/hackbeanpot-logo.png" width="32" height="32" alt="HackBeanpot Logo">
+          <span class="fs-4">HackBeanpot</span>
         </a>
   
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="data-mapping/" class="nav-link">Data Mapping</a></li>
+          <li class="nav-item"><a href="about/" class="nav-link">About</a></li>
         </ul>
       </header>
+    </div>
+
+    <!--change sizing - see old style sheet-->
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+      <h1 class="display-4 fw-bold">Feed the Desert</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Feed the Desert is a student-run project that uses geodatabases to determine, locate, and call attention to
+          communities at greater risk of weight-related health conditions and food-scarcity — areas known as Food
+          Deserts. Using this technology, we hope to be an aid in developing local communities through projects such
+          as community gardens and farmers markets, as well as long-term infrastructural and transit planning.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+          <a class="btn btn-primary btn-lg px-4 me-sm-3" href="data-mapping/" role="button">Take a look at our graph!</a>
+        </div>
+      </div>
+      <div class="overflow-hidden" style="max-height: 30vh;">
+        <div class="container px-5">
+          <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+        </div>
+      </div>
     </div>
   </body>
 </html>
@@ -42,18 +62,7 @@
     <div class="container-center-horizontal">
       <div class="full-project screen">
         <div class="frame-4">
-          <a href="feedthedesert.com" target="_blank">
-            <div class="frame-1-1">
-              <img class="star-1-1" src="img/star-1@2x.png" alt="Star 1" />
-              <div class="hack-beanpot-1">HackBeanpot</div>
-            </div></a
-          >
-          <div class="navbar">
-            <a href="/"><div class="navbar-link jost-medium-plantation-24px">Home</div></a>
-            <a href="data-mapping"><div class="navbar-link jost-medium-plantation-24px">Data Mapping</div></a>
-            <a href="about"><div class="navbar-link jost-medium-plantation-24px">About</div> </a>
-            <a href="learn-more"><div class="navbar-link jost-medium-plantation-24px">Learn More</div> </a>
-          </div>
+          *if time, add to header
           <div class="frame-3">
             <img class="line-1 line" src="img/line-1@2x.png" alt="Line 1" />
             <img class="line-2 line" src="img/line-2@2x.png" alt="Line 2" />
