@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Jost:400,700,500,600|Playfair+Display:600");
 
-$bs-body-bg: #faf7ef;
-$bs-body-color: #255849;
-$font-family-sans-serif: "Jost", Helvetica;
+$body-bg: #faf7ef !important;
+$body-color: #255849 !important;
+$font-family-sans-serif: "Jost", Helvetica !important;
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #8064A2 !important;
+}
 
 @import "../bootstrap/scss/bootstrap.scss";
 
