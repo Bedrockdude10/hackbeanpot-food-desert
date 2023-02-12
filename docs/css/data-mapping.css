@@ -1,13 +1,4 @@
 /* 
-
-.about {
-  align-items: flex-start;
-  background-color: var(--plantation);
-  border: 1px none;
-  display: flex;
-  width: 1600px;
-}
-
 .about .frame-container {
   align-items: flex-start;
   background-image: url(../img/image-10.png);
@@ -29,25 +20,6 @@
   width: fit-content;
 }
 
-.about .star-1 {
-  height: 24px;
-  min-width: 23.4px;
-  position: relative;
-}
-
-.about .hack-beanpot {
-  color: var(--plantation);
-  font-family: var(--font-family-playfair_display);
-  font-size: var(--font-size-s);
-  font-weight: 600;
-  letter-spacing: 0.48px;
-  line-height: 24px;
-  margin-top: -1.00px;
-  position: relative;
-  white-space: nowrap;
-  width: fit-content;
-}
-
 .about .frame-7 {
   align-items: center;
   align-self: flex-end;
@@ -56,27 +28,6 @@
   gap: 24px;
   position: relative;
   width: fit-content;
-}
-
-.about .title {
-  color: var(--plantation);
-  font-family: var(--font-family-jost);
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 108.0px;
-  margin-top: -1.00px;
-  position: relative;
-  text-align: center;
-  width: 957px;
-}
-
-.about .food-deserts-are-are {
-  letter-spacing: 0;
-  line-height: 42.0px;
-  position: relative;
-  text-align: center;
-  width: 669px;
 }
 
 .about .span-1 {
