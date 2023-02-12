@@ -1,33 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="og:type" content="website" />
-        <meta name="twitter:card" content="photo" />
-        <link rel="stylesheet" type="text/css" href="../css/data-mapping.css" />
-        <style></style>
-        <link rel="stylesheet" type="text/css" href="../css/styleguide.css" />
-        <link rel="stylesheet" type="text/css" href="../css/globals.css" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-              integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-              crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-                integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-                crossorigin=""></script>
-    </head>
-    <body style="margin: 0; background: #255849">
-        <div class="data-mapping screen">
-            <div class="frame-7-1">
-              <h1 class="title-1">Data Representation</h1>
-              <p class="we-have-chosen-to-re jost-normal-white-24px">
-                <span class="jost-normal-white-24px">We have chosen to represent at-risk communities and </span
-                ><span class="span-3">possible sites for development</span
-                ><span class="jost-normal-white-24px"> through a graph with nodes representing x, and and </span
-                ><span class="span-3">algorithm that determines</span><span class="jost-normal-white-24px"> y.</span>
-              </p>
-            </div>
-            <div id="map"></div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../scss/custom.css">
+    
+    <title>Data Map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""></script>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+  
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <img src="../img/hackbeanpot-logo.png" width="32" height="32" alt="HackBeanpot Logo">
+          <span class="fs-4">HackBeanpot</span>
+        </a>
+  
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href=".." class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="../data-mapping/" class="nav-link">Data Mapping</a></li>
+          <li class="nav-item"><a href="../about/" class="nav-link">About</a></li>
+        </ul>
+      </header>
+    </div>
+
+    <div class="px-4 pt-5 my-3 text-center border-bottom">
+        <div class="pb-3">
+            <h1 class="display-4 fw-bold">Data Representation</h1>
         </div>
-    </body>
+        <div class="col-lg-6 mx-auto">
+          <p class="mb-4 pb-3">
+              Something something map stuff.</p>
+        </div>
+      </div>
+      
+        <div id="map"></div>
+    </div>
+  </body>
 </html>
