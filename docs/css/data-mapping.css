@@ -233,60 +233,19 @@
   width: fit-content;
 }
 
-.full-project .take-a-look-at-our-graph {
-  color: var(--white);
-  font-family: var(--font-family-jost);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 28.0px;
-  margin-top: -1.00px;
-  position: relative;
-  text-align: center;
-  white-space: nowrap;
-  width: fit-content;
-}
 
-.full-project .frame-22 {
-  align-items: flex-start;
-  display: flex;
-  min-width: 1440px;
-}
-
-.full-project .overlap-group {
-  height: 518px;
-  position: relative;
-  width: 1443px;
-}
-
-.full-project .frame-5::-webkit-scrollbar {
-  display: none;
-  width: 0;
-}
-
-.full-project .frame-5 {
-  align-items: center;
-  display: flex;
-  gap: 32px;
-  left: 0;
-  overflow-x: scroll;
-  position: absolute;
-  top: 58px;
-  width: 1440px;
-}
-
-.full-project .rectangle {
+.rectangle {
   height: 400px;
   min-width: 340px;
   object-fit: cover;
   position: relative;
 }
 
-.full-project .ellipse-1 {
+.ellipse-1 {
   top: 0;
 }
 
-.full-project .ellipse-2 {
+.ellipse-2 {
   top: 397px;
 }
 
