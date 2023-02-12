@@ -52,6 +52,13 @@
   width: 100%;
 }
 
+.map {
+  height: 70%;
+  width:60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors

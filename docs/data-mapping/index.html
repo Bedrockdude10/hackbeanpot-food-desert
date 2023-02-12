@@ -1,25 +1,12 @@
-<!doctype html>
-
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="../scss/custom.css">
     
     <title>Data Map</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-      crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-      crossorigin=""></script>
-
        <!-- below is imports for map-->
-    <style>
-      #map {height: 70%;width:60%}
-    </style>
 
     <script src="https://unpkg.com/neo4j-driver"></script>
   
@@ -59,73 +46,73 @@
           <p class="mb-4 pb-3">
               Something something map stuff.</p>
         </div>
+
+        <div class="map" id="map"></div>
       </div>
       
-        <div id="map"></div>
-    </div>
     <script>
       var baseLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-      { attribution: 'OpenStreetMap', minZoom: 2, maxZoom: 18});
-
-      
-      var markerLayer = new L.MarkerClusterGroup();
-
-      var cfg = {
-        // radius should be small ONLY if scaleRadius is true (or small radius is intended)
-        // if scaleRadius is false it will be the constant radius used in pixels
-        "radius": 2,
-        "maxOpacity": .8,
-        // scales the radius based on map zoom
-        "scaleRadius": false,
-        // if set to false the heatmap uses the global maximum for colorization
-        // if activated: uses the data maximum within the current map boundaries
-        //   (there will always be a red spot with useLocalExtremas true)
-        "useLocalExtrema": false,
-        // which field name in your data represents the latitude - default "lat"
-        latField: 'lat',
-        // which field name in your data represents the longitude - default "lng"
-        lngField: 'lng',
-        // which field name in your data represents the data value - default "value"
-        valueField: 'count'
-      };
-
-
-      var heatmapLayer = new HeatmapOverlay(cfg);
-      var map = new L.Map('map', {center: new L.LatLng(42.341145, -71.057083), zoom: 13, layers: [baseLayer, heatmapLayer]});
-
-      var driver = neo4j.driver("bolt+s://4880961c56ecb6059750f38a0db86f46.neo4jsandbox.com:7687", 
-                                          neo4j.auth.basic("neo4j", "carrier-pea-swells"));
-                                      
-      var session = driver.session();
-      const store_data = [];
-      session
-      .run(`MATCH (s:Store) return s`)
-      .subscribe({
-        onNext: function (record) {
-          //console.log(record.get('s'));
-
-          var xVal = record.get('s').properties.coord.x;
-          var yVal = record.get('s').properties.coord.y;
-          var name = record.get('s').properties.name
-          var neighborhood = record.get('s').properties.neighborhood
-          var address = record.get('s').properties.address
-
-          // these are swapped for whatever reason
-          var marker = new L.marker([yVal, xVal]);
-          //marker.addTo(map);
-          markerLayer.addLayer(marker);
-          marker.bindPopup('<b>'+ name + '</b> <br>' + neighborhood + '<br>' + address );
-          //heatmapLayer.addData({lat: xVal, lng:xVal, count: 1} );
-          store_data.push({lat: xVal, lng:yVal, count: 1} );
-        },
-        onCompleted: function () {
-          heatmapLayer.setData({data:store_data});
-          map.addLayer(markerLayer);
-        },
-        onError: function (error) {
-          console.log(error);
-        }
-      });
+        { attribution: 'OpenStreetMap', minZoom: 2, maxZoom: 18});
+        
+        var markerLayer = new L.MarkerClusterGroup();
+  
+        var cfg = {
+          // radius should be small ONLY if scaleRadius is true (or small radius is intended)
+          // if scaleRadius is false it will be the constant radius used in pixels
+          "radius": 2,
+          "maxOpacity": .8,
+          // scales the radius based on map zoom
+          "scaleRadius": false,
+          // if set to false the heatmap uses the global maximum for colorization
+          // if activated: uses the data maximum within the current map boundaries
+          //   (there will always be a red spot with useLocalExtremas true)
+          "useLocalExtrema": false,
+          // which field name in your data represents the latitude - default "lat"
+          latField: 'lat',
+          // which field name in your data represents the longitude - default "lng"
+          lngField: 'lng',
+          // which field name in your data represents the data value - default "value"
+          valueField: 'count'
+        };
+  
+        var heatmapLayer = new HeatmapOverlay(cfg);
+        var map = new L.Map('map', {center: new L.LatLng(42.341145, -71.057083), zoom: 13, layers: [baseLayer, heatmapLayer]});
+  
+        var driver = neo4j.driver("bolt+s://4880961c56ecb6059750f38a0db86f46.neo4jsandbox.com:7687", 
+                                            neo4j.auth.basic("neo4j", "carrier-pea-swells"));
+                                        
+        var session = driver.session();
+        const store_data = [];
+        session
+        .run(`MATCH (s:Store) return s`)
+        .subscribe({
+          onNext: function (record) {
+            //console.log(record.get('s'));
+  
+            var xVal = record.get('s').properties.coord.x;
+            var yVal = record.get('s').properties.coord.y;
+            var name = record.get('s').properties.name
+            var neighborhood = record.get('s').properties.neighborhood
+            var address = record.get('s').properties.address
+  
+            // these are swapped for whatever reason
+            var marker = new L.marker([yVal, xVal]);
+            //marker.addTo(map);
+            markerLayer.addLayer(marker);
+            marker.bindPopup('<b>'+ name + '</b> <br>' + neighborhood + '<br>' + address );
+            //heatmapLayer.addData({lat: xVal, lng:xVal, count: 1} );
+            store_data.push({lat: xVal, lng:yVal, count: 1} );
+          },
+          onCompleted: function () {
+            heatmapLayer.setData({data:store_data});
+            map.addLayer(markerLayer);
+          },
+          onError: function (error) {
+            console.log(error);
+          }
+        });
     </script>
+    <!-- </div> -->
+
   </body>
 </html>
