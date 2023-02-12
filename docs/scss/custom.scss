@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Jost:400,700,500,600|Playfair+Display:600");
 
-$body-bg: #255849;
-$body-color: #faf7ef;
+$bs-body-bg: #faf7ef;
+$bs-body-color: #255849;
+$font-family-sans-serif: "Jost", Helvetica;
 
 @import "../bootstrap/scss/bootstrap.scss";
 
