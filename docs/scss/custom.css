@@ -8,11 +8,13 @@
   align-items: flex-start;
   display: flex;
   min-width: 100%;
+  max-width: 300%;
 }
 .overlap-group {
   height: 518px;
   position: relative;
   width: 100%;
+  max-width: 300%;
 }
 .frame-5::-webkit-scrollbar {
   display: none;
@@ -27,6 +29,7 @@
   position: absolute;
   top: 58px;
   width: 100%;
+  max-width: 300%;
 }
 .rectangle {
   height: 400px;
