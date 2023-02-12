@@ -38,7 +38,7 @@
                                             
 var session = driver.session();
 session
-  .run(`MATCH (s:Store) return s`)
+  .run(`MATCH (s:Store WHERE s.neighborhood = 'Dorchester') return s`)
   .subscribe({
     onNext: function (record) {
       console.log(record.get('s'));
