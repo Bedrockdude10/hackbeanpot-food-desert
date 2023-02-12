@@ -4993,9 +4993,9 @@ textarea.form-control-lg {
   }
 }
 .list-group {
-  --bs-list-group-color: #212529;
-  --bs-list-group-bg: #fff;
-  --bs-list-group-border-color: rgba(0, 0, 0, 0.125);
+  --bs-list-group-color: #255849;
+  --bs-list-group-bg: #faf7ef;
+  --bs-list-group-border-color: #faf7ef;
   --bs-list-group-border-width: 1px;
   --bs-list-group-border-radius: 0.375rem;
   --bs-list-group-item-padding-x: 1rem;
