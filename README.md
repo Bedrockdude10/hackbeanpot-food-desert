@@ -1,7 +1,7 @@
 # Feed The Desert
 HackBeanpot 2023 Project (Feb 10-12, 2023)
 
-View website: [feedthedesert.com](feedthedesert.com) | [Video Demo](youtube.com)
+View website: [feedthedesert.com](https://feedthedesert.com/) | [Devpost](https://devpost.com/software/feed-the-desert?ref_content=my-projects-tab&ref_feature=my_projects) | [Video Demo](youtube.com) 
 
 ## Inspiration
 Our inspiration was originally derived from the desert theme of the hackathon, which made our group reflect on the deserts that exist within our communities. Throughout Boston , one of the most walkable cities in the U.S., there still exists many local neighborhoods without access to nutritious foods or affordable groceries. Boston has now become the second most expensive city to rent in the country, with grocery expenses averaging more than major metropolises like New York City. Coupled with inflation, underserved communities are in a struggle to afford food that is healthy, causing a risk of negative health conditions among members. To assist in developing solutions to this disparity, we put together databases and design algorithms that would be able to detect at-risk neighborhoods to promote further equitable developments.
