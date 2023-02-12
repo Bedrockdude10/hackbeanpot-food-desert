@@ -76,13 +76,26 @@
               // these are swapped for whatever reason
               if(record.get('s').labels.includes("Garden")){
                 var marker = new L.marker([yVal, xVal], {icon: gardenMarker});
+                var circle = L.circle([yVal, xVal], {
+                    color: '#73ba86',
+                    fillColor: '#aed1b7',
+                    fillOpacity: 0.3,
+                    radius:200
+                }).addTo(map);
               } else {
                 var marker = new L.marker([yVal, xVal], {icon: storeMarker});
+                var circle = L.circle([yVal, xVal], {
+                    color: 'green',
+                    fillColor: '#73ba86',
+                    fillOpacity: 0.3,
+                    radius:800
+                }).addTo(map);
               }
               
               //marker.addTo(map);
               markerLayer.addLayer(marker);
               marker.bindPopup('<b>'+ name + '</b> <br>' + neighborhood + '<br>' + address );
+              
               //heatmapLayer.addData({lat: xVal, lng:xVal, count: 1} );
               store_data.push({lat: xVal, lng:yVal, count: 1} );
             },

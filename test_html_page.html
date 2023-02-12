@@ -13,9 +13,6 @@
 
   <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
-  <script src="https://www.patrick-wied.at/static/heatmapjs/assets/js/heatmap.min.js"></script>
-  <script src="https://www.patrick-wied.at/static/heatmapjs/assets/js/leaflet-heatmap.js"></script>
-  <script src="./leaflet-div-heatmap.js"></script>
 </head>
 
   <body>
@@ -26,12 +23,6 @@
         
         var markerLayer = new L.MarkerClusterGroup();
 
-        var ops = {
-            radius: 100,
-            gradient: true,
-            color: '255,0,0' 
-        }
-        var divHeatmapLayer = new L.DivHeatmapLayer(ops);
         var map = new L.Map('map', {center: new L.LatLng(42.341145, -71.057083), zoom: 13, layers: [baseLayer]});
         var gardenMarker = L.icon({iconUrl: 'garden-icon.png'});
         var storeMarker = L.icon({iconUrl: 'store-icon.png'});
@@ -40,17 +31,27 @@
                                         
         var session = driver.session();
         const store_data = [];
+        const rel_data = new Array();
+        rel_data[0] = new Array();
         session
-        .run(`MATCH (s) return s`)
+        .run(`Match (s:Store)
+            optional match (s)-[r]->(t) 
+            Return s,r,t`)
         .subscribe({
           onNext: function (record) {
-            //console.log(record.get('s').labels.includes("Garden"));
+            //console.log(record.get('s').identity.low);
   
+            var id = record.get('s').identity.low;
             var xVal = record.get('s').properties.coord.x;
             var yVal = record.get('s').properties.coord.y;
             var name = record.get('s').properties.name
             var neighborhood = record.get('s').properties.neighborhood
             var address = record.get('s').properties.address
+
+            if (record.get('r')!= null){
+              var rel_start = record.get('r').start.low
+              var rel_end = record.get('r').end.low
+            }
   
             // these are swapped for whatever reason
             if(record.get('s').labels.includes("Garden")){
@@ -62,13 +63,41 @@
             //marker.addTo(map);
             markerLayer.addLayer(marker);
             marker.bindPopup('<b>'+ name + '</b> <br>' + neighborhood + '<br>' + address );
-            //heatmapLayer.addData({lat: xVal, lng:xVal, count: 1} );
-            store_data.push({lat: xVal, lon:yVal, value: 1} );
+            var circle = L.circle([yVal, xVal], {
+                color: 'green',
+                fillColor: '#73ba86',
+                fillOpacity: 0.3,
+                radius:800
+            }).addTo(map);
+            
+            store_data[id] ={lat: xVal, lon:yVal, value: 1} ;
+
+            /*
+            var found = false;
+            for (let i = 0; i<rel_data.length; i++) {
+                var innerArrayLength = rel_data[i].length;
+                for (let j = 0; j <innerArrayLength; j++) {
+                  if (!found && (rel_data[i][j].includes(rel_start) || rel_data[i][j].includes(rel_end))){
+                    print(rel_data[i][j])
+                      if (!rel_data[i][j].includes(rel_start)) {
+                        rel_data[i][j].push(rel_start);
+                      }
+                      if (!rel_data[i][j].includes(rel_end)) {
+                        rel_data[i][j].push(rel_end);
+                      }
+                      found = True;
+                    }
+                }
+            }
+          
+            if (!found){
+              rel_data[rel_data.length-1]=new Array(rel_start, rel_end);
+            }*/
+
           },
           onCompleted: function () {
             map.addLayer(markerLayer);
-            divHeatmapLayer.setData(store_data);
-            map.addLayer(divHeatmapLayer);
+            console.log(rel_data);
           },
           onError: function (error) {
             console.log(error);
